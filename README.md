@@ -1,71 +1,48 @@
-# Getting Started with Create React App
+# Boas Vindas ao repositório do Teste da ElQuarto!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Oi! Aqui Você vai encontrar os detalhes e instruções de como rodar a aplicação!
 
-## Available Scripts
+# Instruções
 
-In the project directory, you can run:
+1.  Clone o repositório
 
-### `npm start`
+- git clone git@github.com:Diego-F-Affonso/desafio_elquarto.git
+- Entre na pasta do repositório que você acabou de clonar:
+  - cd desafio_elquarto
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+2.  Instale as dependências
+    - npm install
+3.  Navegue na aplicação via LocalHost
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Contexto
 
-### `npm test`
+Teste Técnico de front-end React Tango Bravo da empresa ElQuarto, onde foi solicitado o desenvolvimento de um quadro da metodologia kanban, com as funcionalidades básicas como: adicionar, remover, mover as tarefas para as outras colunas e ordenar as mesmas dentro da própria coluna.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Habilidades
 
-### `npm run build`
+No desenvolvimento do mesmo foram utilizadas tecnologias e bibliotecas como: React, Redux, Hooks, React-beautiful-dnd, Bootstrap e etc.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Desafios
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+O maior desafio enfrentado no desenvolvimento da aplicação foi a utilização da biblioteca React-beautiful-dnd e a implementação da sua logica ao componentizar.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Aprendizado
 
-### `npm run eject`
+Adorei a dinâmica na qual nos, candidatos damos o nosso tempo que achamos necessário para o desenvolvimento apos analise do mesmo, aprendi bastante sobre prazos e como estipulá-los .
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## O que eu gostaria de implementar
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Devido ao contratempo com a biblioteca de drag and drop e visando entregar um código funcional, os testes unitários, uma estilização melhor e algumas funcionalidades como abrir o card para visualização dos detalhes do mesmo, remover a coluna, mover a coluna de lugar e não só o card não foram implementadas no tempo.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# Agradecimento
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Fica o agradecimento a equipe de desenvolvimento da Elquarto por desenvolver um teste prazeroso de fazer e com uma metodologia alternativa não estipulando o prazo do mesmo e deixando que o candidato decida.
 
-## Learn More
+E ao RH - *Alina Silva*por ser objetiva e bem clara quanto a vaga e as necessidades da empresa.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Contato
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# desafio_elquarto
+Diego Fernandes Affonso
+Cel: 31 99971-8515
+Linkedin: [Diego Fernandes Affonso](https://www.linkedin.com/in/diegofernandesaffonso/)
+email: diegofernandesaffonso@gmail.com
