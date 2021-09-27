@@ -44,7 +44,7 @@ E ao RH - *Alina Silva* por ser objetiva e bem clara quanto a vaga e as necessid
 
 Diego Fernandes Affonso
 
-Cel: 31 99971-8515
+Cel/wpp: [31 99971-8515](https://wa.me/5531999718515)
 
 Linkedin: [Diego Fernandes Affonso](https://www.linkedin.com/in/diegofernandesaffonso/)
 
