@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import { Draggable } from 'react-beautiful-dnd';
+import { MdClose, MdLibraryAdd, MdClear } from 'react-icons/md';
 import uuid from 'uuid/v4';
 
 const Cards = ({ column, columnId, indexPai, columns }) => {
   const columnsFromBackend = useSelector((state) => state.columns);
   const [renderNewCard, setRenderNewCard] = useState(false);
+  const [renderAlert, setRenderAlert] = useState(false);
   const dispatch = useDispatch();
 
   useEffect(() => {}, [columnsFromBackend, columns]);
@@ -26,11 +28,17 @@ const Cards = ({ column, columnId, indexPai, columns }) => {
   };
 
   const addItem = (id, title) => {
-    const copyColumns = { ...columns };
-    const columnForAddItem = copyColumns[id].items;
-    const newItem = { id: uuid(), content: title };
-    columnForAddItem.push(newItem);
-    dispatch({ type: 'ADD_ITEM', newState: copyColumns });
+    if (title.length !== 0) {
+      const copyColumns = { ...columns };
+      const columnForAddItem = copyColumns[id].items;
+      const newItem = { id: uuid(), content: title };
+      columnForAddItem.push(newItem);
+      dispatch({ type: 'ADD_ITEM', newState: copyColumns });
+      setRenderNewCard(!renderNewCard);
+      setRenderAlert(false);
+    } else {
+      setRenderAlert(true);
+    }
   };
 
   return (
@@ -41,6 +49,7 @@ const Cards = ({ column, columnId, indexPai, columns }) => {
             {(provided, snapshot) => {
               return (
                 <div
+                  className="card"
                   ref={provided.innerRef}
                   // eslint-disable-next-line react/jsx-props-no-spreading
                   {...provided.draggableProps}
@@ -58,16 +67,19 @@ const Cards = ({ column, columnId, indexPai, columns }) => {
                     ...provided.draggableProps.style,
                   }}
                 >
-                  {item.content}
-                  <button
-                    type="button"
-                    onClick={() => {
-                      removeItem(columnId, item.id);
-                    }}
-                  >
-                    X
-                  </button>
-                  <span>{`TAG: ${indexPai + 1}`}</span>
+                  <div className="card-body">
+                    <h5 className="card-title">{item.content}</h5>
+                    <span className="card-text">{`TAG: ${indexPai + 1}`}</span>
+                    <button
+                      className="btn btn-primary"
+                      type="button"
+                      onClick={() => {
+                        removeItem(columnId, item.id);
+                      }}
+                    >
+                      <MdClear />
+                    </button>
+                  </div>
                 </div>
               );
             }}
@@ -75,29 +87,54 @@ const Cards = ({ column, columnId, indexPai, columns }) => {
         );
       })}
       <button
+        className="alert alert-dark"
         type="button"
         onClick={() => {
-          setRenderNewCard(true);
+          setRenderNewCard(!renderNewCard);
         }}
       >
-        botão de add card
+        <MdLibraryAdd />
+        add card
       </button>
-      {renderNewCard ? (
-        <label htmlFor="addColumn">
-          <input type="text" name="addColumn" placeholder="title" />
-          <button
-            type="button"
-            onClick={(e) => {
-              const newCard = e.target.previousElementSibling.value;
-              addItem(columnId, newCard);
-              setRenderNewCard(false);
-            }}
-          >
-            ADD CARD
-          </button>
-        </label>
-      ) : (
-        <></>
+      {renderNewCard && (
+        <div className="input-group">
+          <label htmlFor="addColumn">
+            <input
+              className="form-control"
+              type="text"
+              name="addColumn"
+              placeholder="title"
+            />
+            <div className="input-group-append">
+              <button
+                className="btn btn-outline-secondary"
+                type="button"
+                onClick={(e) => {
+                  const newCard =
+                    e.target.parentNode.previousElementSibling.value;
+                  addItem(columnId, newCard);
+                }}
+              >
+                ADD CARD
+              </button>
+              <button
+                className="btn btn-outline-secondary"
+                type="button"
+                onClick={() => {
+                  setRenderNewCard(!renderNewCard);
+                  setRenderAlert(false);
+                }}
+              >
+                <MdClose />
+              </button>
+            </div>
+          </label>
+        </div>
+      )}
+      {renderAlert && (
+        <div className="alert alert-warning" role="alert">
+          Fill in the title field!
+        </div>
       )}
     </>
   );

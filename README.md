@@ -11,12 +11,14 @@ Oi! Aqui Você vai encontrar os detalhes e instruções de como rodar a aplicaç
   - cd desafio_elquarto
 
 2.  Instale as dependências
+
     - npm install
 
-4. Inicie a aplicação
+3.  Inicie a aplicação
+
     - npm start
- 
-6.  Navegue na aplicação via LocalHost
+
+4.  Navegue na aplicação via LocalHost
 
 ## Contexto
 
@@ -36,13 +38,13 @@ Adorei a dinâmica na qual nos, candidatos damos o nosso tempo que achamos neces
 
 ## O que eu gostaria de implementar
 
-Devido ao contratempo com a biblioteca de drag and drop e visando entregar um código funcional, os testes unitários, uma estilização melhor e algumas funcionalidades como abrir o card para visualização dos detalhes do mesmo, remover a coluna, mover a coluna de lugar e não só o card não foram implementadas no tempo.
+Devido ao contratempo com a biblioteca de drag and drop e visando entregar um código funcional, os testes unitários, uma estilização melhor e algumas funcionalidades como abrir o card para visualização dos detalhes do mesmo, remover a coluna, salvar o estado no localStorage, mover a coluna de lugar e não só o card não foram implementadas no tempo.
 
 # Agradecimento
 
 Fica o agradecimento a equipe de desenvolvimento da Elquarto por desenvolver um teste prazeroso de fazer e com uma metodologia alternativa não estipulando o prazo do mesmo e deixando que o candidato decida.
 
-E ao RH - *Alina Silva* por ser objetiva e bem clara quanto a vaga e as necessidades da empresa.
+E ao RH - _Alina Silva_ por ser objetiva e bem clara quanto a vaga e as necessidades da empresa.
 
 ## Contato
 

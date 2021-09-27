@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
+import { MdClose, MdLibraryAdd } from 'react-icons/md';
 import uuid from 'uuid/v4';
 import Cards from '../cards/index';
 import onDragEnd from '../../services/index';
@@ -11,39 +12,30 @@ function Columns() {
   const columnsFromBackend = useSelector((state) => state.columns);
 
   const [columns, setColumns] = useState(columnsFromBackend);
-  // const [ŕenderNewCard, setRenderNewCard] = useState(false);
   const [renderInput, setRenderInput] = useState(false);
+  const [renderAlert, setRenderAlert] = useState(false);
 
-  useEffect(() => {
-    // console.log(columnsFromBackend);
-    // console.log(columns);
-    // console.log('mudei o card');
-  }, [columnsFromBackend, columns]);
+  useEffect(() => {}, [columnsFromBackend, columns]);
 
   // FUNÇÃO PARA ADD NOVA COLUNA
   const addColumn = (data) => {
-    const newColumn = { [uuid()]: { name: data, items: [] } };
-    const copyColumns = { ...columns, ...newColumn };
+    if (data.length !== 0) {
+      const newColumn = { [uuid()]: { name: data, items: [] } };
+      const copyColumns = { ...columns, ...newColumn };
 
-    dispatch({ type: 'ADD_COLUMN', name: data });
-    setColumns(copyColumns);
+      dispatch({ type: 'ADD_COLUMN', name: data });
+      setColumns(copyColumns);
+      setRenderInput(!renderInput);
+      setRenderAlert(false);
+    } else {
+      setRenderAlert(true);
+    }
   };
-
-  // FUNÇÃO DE ADD NOVO CARD
-  // const addItem = (id, title) => {
-  //   const copyColumns = { ...columns };
-  //   const columnForAddItem = copyColumns[id].items;
-  //   const newItem = { id: uuid(), content: title };
-  //   columnForAddItem.push(newItem);
-  //   dispatch({ type: 'ADD_ITEM', newState: copyColumns });
-  // };
 
   return (
     <div style={{ display: 'flex', justifyContent: 'center', height: '100%' }}>
       <DragDropContext
         onDragEnd={(result) => {
-          // console.log('mudei o card no context', columns);
-          dispatch({ type: 'TEST', newState: columns });
           onDragEnd(result, columns, setColumns);
         }}
       >
@@ -88,60 +80,60 @@ function Columns() {
                   }}
                 </Droppable>
               </div>
-              {/* <button
-                type="button"
-                onClick={() => {
-                  setRenderNewCard(true);
-                }}
-              >
-                botão de add card
-              </button>
-              {ŕenderNewCard ? (
-                <label htmlFor="addColumn">
-                  <input type="text" name="addColumn" placeholder="title" />
-                  <button
-                    type="button"
-                    onClick={(e) => {
-                      const newCard = e.target.previousElementSibling.value;
-                      addItem(columnId, newCard);
-                      setRenderNewCard(false);
-                    }}
-                  >
-                    ADD CARD
-                  </button>
-                </label>
-              ) : (
-                <></>
-              )} */}
             </div>
           );
         })}
       </DragDropContext>
       <div>
         <button
+          className="alert alert-dark"
           type="button"
           onClick={() => {
-            setRenderInput(true);
+            setRenderInput(!renderInput);
           }}
         >
-          botão de add column
+          <MdLibraryAdd />
+          add column
         </button>
-        {renderInput ? (
-          <label htmlFor="addColumn">
-            <input type="text" name="addColumn" placeholder="new column" />
-            <button
-              type="button"
-              onClick={(e) => {
-                const newColumn = e.target.previousElementSibling.value;
-                addColumn(newColumn);
-                setRenderInput(false);
-              }}
-            >
-              ADD
-            </button>
-          </label>
-        ) : (
-          <></>
+        {renderInput && (
+          <div className="input-group">
+            <label htmlFor="addColumn">
+              <input
+                className="form-control"
+                type="text"
+                name="addColumn"
+                placeholder="new column"
+              />
+              <div className="input-group-append">
+                <button
+                  className="btn btn-outline-secondary"
+                  type="button"
+                  onClick={(e) => {
+                    const newColumn =
+                      e.target.parentNode.previousElementSibling.value;
+                    addColumn(newColumn);
+                  }}
+                >
+                  ADD COLUMN
+                </button>
+                <button
+                  className="btn btn-outline-secondary"
+                  type="button"
+                  onClick={() => {
+                    setRenderInput(!renderInput);
+                    setRenderAlert(false);
+                  }}
+                >
+                  <MdClose />
+                </button>
+              </div>
+            </label>
+          </div>
+        )}
+        {renderAlert && (
+          <div className="alert alert-warning" role="alert">
+            Fill in the title field!
+          </div>
         )}
       </div>
     </div>
