@@ -12,7 +12,11 @@ Oi! Aqui Você vai encontrar os detalhes e instruções de como rodar a aplicaç
 
 2.  Instale as dependências
     - npm install
-3.  Navegue na aplicação via LocalHost
+
+4. Inicie a aplicação
+    - npm start
+ 
+6.  Navegue na aplicação via LocalHost
 
 ## Contexto
 
