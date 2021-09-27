@@ -38,7 +38,7 @@ Devido ao contratempo com a biblioteca de drag and drop e visando entregar um c√
 
 Fica o agradecimento a equipe de desenvolvimento da Elquarto por desenvolver um teste prazeroso de fazer e com uma metodologia alternativa n√£o estipulando o prazo do mesmo e deixando que o candidato decida.
 
-E ao RH - *Alina Silva*por ser objetiva e bem clara quanto a vaga e as necessidades da empresa.
+E ao RH - *Alina Silva* por ser objetiva e bem clara quanto a vaga e as necessidades da empresa.
 
 ## Contato
 
