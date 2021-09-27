@@ -43,6 +43,9 @@ E ao RH - *Alina Silva*por ser objetiva e bem clara quanto a vaga e as necessida
 ## Contato
 
 Diego Fernandes Affonso
+
 Cel: 31 99971-8515
+
 Linkedin: [Diego Fernandes Affonso](https://www.linkedin.com/in/diegofernandesaffonso/)
+
 email: diegofernandesaffonso@gmail.com
